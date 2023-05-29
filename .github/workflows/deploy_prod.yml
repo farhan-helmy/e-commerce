@@ -1,9 +1,11 @@
 name: Deploy Prod
 
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
+    inputs:
+      git_tag:
+        description: 'Tag this release (e.g. v0.1.1).'
+        required: true
 
 jobs:
   deploy:
